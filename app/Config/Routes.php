@@ -37,7 +37,7 @@ $routes->get('create-db', function () {
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Pages::index2');
+$routes->get('/', 'Pages::index');
 $routes->get('/(:num)', 'Pages::index/$1');
 
 /*

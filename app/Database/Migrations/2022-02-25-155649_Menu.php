@@ -17,11 +17,11 @@ class Menu extends Migration
             ],
             'menu_name'       => [
                 'type'       => 'VARCHAR',
-                'constraint' => '100',
+                'constraint' => '50',
             ],
             'menu_category'       => [
                 'type'       => 'VARCHAR',
-                'constraint' => '100',
+                'constraint' => '50',
             ],
             'menu_price'          => [
                 'type'           => 'INT',
