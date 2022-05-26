@@ -8,6 +8,7 @@ class Pages extends BaseController
 {
 
 
+
     public function index($nomeja = 0)
     {
 
@@ -21,16 +22,6 @@ class Pages extends BaseController
             'makanan' => $makanan,
             'minuman' => $minuman,
             'snack' => $snack
-        ];
-        return view('pages/home', $data);
-    }
-
-    public function index2()
-    {
-
-        $data = [
-            'title' => 'homenya',
-            'nomeja' => 0
         ];
         return view('pages/home', $data);
     }

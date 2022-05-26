@@ -1,3 +1,9 @@
+<?php
+$get_time = gettimeofday();
+$idlog = $get_time['sec'] . $get_time['usec'];
+// echo $idlog;
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -74,11 +80,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="JS/multislider.min.js"></script>
     <title>Lau Cafe (<?= $nomeja; ?>)</title>
-    <?php
-    if ($nomeja == 0) {
-        echo "<script> alert('scan qr code pada meja!')</script>";
-    }
-    ?>
+
 </head>
 
 <body>
@@ -115,7 +117,7 @@
             <ul id="buyItems">
                 <h4 class="empty">Belum ada menu yang dipilih</h4>
             </ul>
-            <button onclick="window.location='<?php echo base_url('Bayar') ?>'" class="btn checkout hidden">Bayar</button>
+            <button onclick="window.location='<?php echo base_url($nomeja . '/Bayar') ?>'" class="btn checkout hidden">Bayar</button>
         </div>
     </nav>
     <div class="container">
@@ -213,7 +215,7 @@
                                 <div class="order_box float-right">
                                     <div class="order_button float-right pt-2">
                                     <div class="product-over">
-                                        <button class="tombol addToCart" data-product-id="<?= $value->id ?>">
+                                        <button class="tombol addToCart" data-product-id="<?= $value->menu_id ?>">
                                             <i class="fas fa-plus"></i>
                                         </button>
                                     </div>
@@ -251,7 +253,7 @@
                                 <div class="order_box float-right">
                                     <div class="order_button float-right pt-2">
                                     <div class="product-over">
-                                        <button class="tombol addToCart" data-product-id="<?= $value_miuman->id ?>">
+                                        <button class="tombol addToCart" data-product-id="<?= $value_miuman->menu_id ?>">
                                             <i class="fas fa-plus"></i>
                                         </button>
                                     </div>
@@ -287,7 +289,7 @@
                                 <div class="order_box float-right">
                                     <div class="order_button float-right pt-2">
                                     <div class="product-over">
-                                        <button class="tombol addToCart" data-product-id="<?= $value_miuman->id ?>">
+                                        <button class="tombol addToCart" data-product-id="<?= $value_miuman->menu_id ?>">
                                             <i class="fas fa-plus"></i>
                                         </button>
                                     </div>
@@ -319,7 +321,9 @@
 
 
 
-
+        <script>
+            localStorage.setItem('idlog', <?= $idlog; ?>);
+        </script>
         <script>
             let productsInCart = JSON.parse(localStorage.getItem('shoppingCart'));
             if (!productsInCart) {
