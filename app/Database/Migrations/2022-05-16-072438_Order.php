@@ -37,6 +37,12 @@ class Order extends Migration
                 'constraint' => '20',
                 'null' => TRUE
             ],
+            'qris'      => [
+                'type' => 'TEXT'
+            ],
+            'tanggal_api' => [
+                'type' => 'DATETIME'
+            ]
         ]);
         $this->forge->addKey('order_id', true);
         $this->forge->createTable('order');

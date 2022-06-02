@@ -74,7 +74,7 @@
 
 </head>
 
-<body>
+<body style="margin:0">
     <nav>
         <center>
             <div class="navbar-top">
@@ -87,15 +87,15 @@
         </center>
     </nav>
     <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" style="padding:0">
             <center><img style="width: 70%;" src='<?= $qr ?>' /></center>
 
             <center>
                 <button onclick="window.location='<?php echo base_url('Bayar/donlot/' . $idlog) ?>'" class="btn btn-primary btn-sm">Download QRIS</button>
-                <button onclick="window.location='<?php echo base_url('Bayar/donlot/' . $idlog) ?>'" class="btn btn-primary btn-sm">Cek Status</button>
+                <button onclick="window.location='<?php echo base_url($nomeja . '/Bayar/cekstatus/' . $idlog) ?>'" class="btn btn-primary btn-sm">Cek Status</button>
             </center>
         </div>
-        <div class="col-lg-9 col-md-6 col-sm-6 col-xs-12">
+        <div class="col-lg-9 col-md-6 col-sm-6 col-xs-12" style="padding:0">
             <center style="margin: 0 20px;">
                 <br>
                 <font>Aplikasi pembayaran yang mendukung transaksi pada perangkat yang sama</font><br><br>
@@ -110,7 +110,7 @@
                 <img src="/image/blu.jpg" width="40px" height="40px" style="margin-bottom:3px;border-radius:10px;border:1px solid darkgrey;">
                 <img src="/image/jenius.jpg" width="40px" height="40px" style="margin-bottom:3px;border-radius:10px;border:1px solid darkgrey;">
                 <br><br>
-                <font>Cara Pembayaran</font><br><br>
+                <font>Cara Bayar</font><br><br>
             </center>
             <div style="margin:0 20px">
                 1. Download QRIS<br>
@@ -119,7 +119,8 @@
                 4. Pilih upload from gallery (biasanya berupa icon galeri)<br>
                 5. Pilih QRIS yang sudah kamu download<br>
                 6. Klik bayar<br>
-                7. Kembali ke pesanan, dan klik "Cek Status"<br>
+                <font color="red">7. Kembali ke pesanan, dan klik "<b>Cek Status</b>"</font><br>
+                8. Infokan ke pelayan jika ada masalah pembayaran
             </div>
         </div>
     </div>

@@ -39,8 +39,9 @@ $routes->get('create-db', function () {
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
 $routes->get('/(:num)', 'Pages::index/$1');
-$routes->get('/admin', 'Admin::index');
+$routes->get('/login', 'Login::index');
 $routes->get('/(:num)/Bayar', 'Bayar::index/$1');
+$routes->get('/(:num)/Bayar/cekstatus/(:num)', 'Bayar::cekstatus/$1/$2');
 
 /*
  * --------------------------------------------------------------------
